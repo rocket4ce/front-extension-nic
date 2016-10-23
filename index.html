@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+    <meta charset="utf-8">
+    <title>Busca dominio en NIC.CL - NO ES UNA APLICACIÓN OFICIAL</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body ng-controller='todoCtrl'>
+    <div class='container'>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <form id='todo-form' ng-submit='add()' class="form-inline m-t-20">
+                    <div class="form-group">
+                      <label for="search-input"><i class="fa fa-search" aria-hidden="true"></i></label>
+                        <div class="input-group">
+                          <input required autocomplete="off" type='text' id='dominio' ng-model='newContent' class="form-control" placeholder="Ingresa el nombre del dominio ej: ivdevs" ng-trim="false" ng-change="newContent = newContent.split(' ').join('')" />
+                          <div class="input-group-addon">.cl</div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                      <button type="submit" class="btn btn-primary"> <i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div id='toolbar'>
+                    <p>
+                      {{hola}}
+                      <a target="_blank" ng-href="{{url}}">{{busqueda}}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="text-center">
+            <small class="poder">
+              De la comunidad <a target="_blank" href="http://ivdevs.com/">IVDevs</a> para el mundo!!. XD
+            </small>
+          </div>
+        </div>
+
+    </div>
+    <div ng-hide="cargando" class="preload"> <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i> </div>
+    <script type="text/javascript" src="lib/jquery/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/nicCtrl.js"></script>
+</body>
+</html>

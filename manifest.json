@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name"            : "busqueda-nic",
+  "description"     : "Busqueda minimalista si existe dominio en nic.cl",
+  "short_name"      : "busqueda-nic",
+  "version"         : "0.1",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon" : "images/logo.png"
+  },
+  "permissions": [
+    "debugger",
+    "storage"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
+}
